@@ -22,18 +22,15 @@ variable "aws_cluster_name" {
 
 data "aws_ami" "distro" {
   most_recent = true
-
   filter {
     name   = "name"
-    values = ["debian-10-amd64-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
-
-  owners = ["136693071363"] # Debian-10
 }
 
 //AWS VPC Variables
